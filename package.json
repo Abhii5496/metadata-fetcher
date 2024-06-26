@@ -1,5 +1,5 @@
 {
-  "name": "metadata-fetcher",
+  "name": "metadata-fetch",
   "version": "1.0.0",
   "description": "This package is used to fetch the metadata of given url or site with help of cheerio.",
   "main": "./dist/index.js",
