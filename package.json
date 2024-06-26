@@ -1,0 +1,26 @@
+{
+  "name": "metadata-fetcher",
+  "version": "1.0.0",
+  "description": "This package is used to fetch the metadata of given url or site with help of cheerio.",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "homepage": "https://metadata-fetcher.vercel.app/",
+  "scripts": {
+    "build": "tsup",
+    "start": "npm run build && node dist/index.js"
+  },
+  "keywords": [
+    "metadata",
+    "cheerio"
+  ],
+  "author": "Abhii5496",
+  "license": "MIT",
+  "devDependencies": {
+    "tsup": "^8.1.0",
+    "typescript": "^5.5.2"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12"
+  }
+}
