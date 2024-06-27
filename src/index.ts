@@ -1,5 +1,3 @@
-import * as cheerio from "cheerio";
-
 export const getMetadata = async (url: string) => {
   if (!url) {
     return { error: "Please enter url" };
@@ -8,26 +6,16 @@ export const getMetadata = async (url: string) => {
   const isValid = urlRegex.test(url);
 
   if (isValid) {
-    const res = await fetch(url);
+    const res = await fetch(
+      "https://metadata-fetcher.vercel.app/api/meta-data?url=" + url
+    );
 
     try {
       if (!res.ok) {
         return { error: `Failed to fetch the URL: ${res.statusText}` };
       }
-      console.log(res);
-
-      const response = await res.text();
-      const $ = cheerio.load(response);
-      const ogTags = {
-        title: $('meta[property="og:title"]').attr("content") || null,
-        description:
-          $('meta[property="og:description"]').attr("content") || null,
-        image: $('meta[property="og:image"]').attr("content") || null,
-        url: $('meta[property="og:url"]').attr("content") || null,
-        keywords: $('meta[name="keywords"]').attr("content") || null,
-        canonical: $('link[rel="canonical"]').attr("href") || null,
-      };
-      return ogTags;
+      const response = await res.json();
+      return response;
     } catch (error) {
       return { error: `An error occurred: ${error}` };
     }
@@ -35,3 +23,9 @@ export const getMetadata = async (url: string) => {
     return { error: "Please enter valid url" };
   }
 };
+
+// getMetadata(
+//   "https://www.youtube.com/watch?v=pksTz4IBRVs&list=PLu1NXqt4iKA9mHnZvsWXohjExmJwwVUMl&index=7"
+// )
+//   .then((metadata) => console.log(metadata))
+//   .catch((error) => console.error(error));
