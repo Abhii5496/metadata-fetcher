@@ -6,6 +6,10 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "homepage": "https://metadata-fetcher.vercel.app/",
+   "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abhii5496/metadata-fetcher.git"
+  },
   "scripts": {
     "build": "tsup",
     "start": "npm run build && node dist/index.js",
