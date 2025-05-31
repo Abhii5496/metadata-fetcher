@@ -6,7 +6,7 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "homepage": "https://metadata-fetcher.vercel.app/",
-   "repository": {
+  "repository": {
     "type": "git",
     "url": "git+https://github.com/Abhii5496/metadata-fetcher.git"
   },
@@ -22,11 +22,11 @@
   "author": "Abhii5496",
   "license": "MIT",
   "devDependencies": {
+    "@types/node": "^22.15.29",
     "tsup": "^8.1.0",
     "typescript": "^5.5.2"
   },
   "dependencies": {
-    "cheerio": "^1.0.0-rc.12",
-    "metadata-fetch": "^1.0.2"
+    "metadata-fetch": "^1.1.2"
   }
 }
