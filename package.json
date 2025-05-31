@@ -1,6 +1,6 @@
 {
   "name": "metadata-fetch",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "This package is used to fetch the metadata of given url or site with help of cheerio.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -16,7 +16,15 @@
     "test": "node test.ts"
   },
   "keywords": [
-    "metadata fetcher,metadata scraper,open graph viewer,twitter card preview,SEO metadata tool,website metadata,link preview generator,social media preview"
+    "metadata",
+    "metadata fetcher",
+    "metadata scraper",
+    "open graph viewer",
+    "twitter card preview",
+    "SEO metadata tool",
+    "website metadata",
+    "link preview generator",
+    "social media preview"
   ],
   "author": "Abhii5496",
   "license": "MIT",
