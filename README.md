@@ -1,60 +1,107 @@
-# URL Metadata Fetcher
 
-This Node.js module fetches and extracts metadata from a given URL using Cheerio. The extracted metadata includes Open Graph tags, keywords, and the canonical URL.
+# Metadata Fetcher & Scraper [🌐](https://metadata-fetcher.vercel.app/)
 
+metadata-fetch is a lightweight JavaScript library that fetches and extracts/scrape essential
+metadata (Open Graph, Twitter Cards, favicons, canonical URLs, and SEO tags) from any webpage URL —
+perfect for generating rich link previews and auditing SEO data with ease.
 
+---
 
-## Install
-
+## 🚀 Installation
 
 ```bash
-  npm i metadata-fetch
+npm install metadata-fetch
 ```
 
-
-## Usage
+## 🔧 Usage
 
 ```js
-import { getMetadata } from 'metadata-fetch';
+import { getMetadata } from "metadata-fetch";
 
+const url = "https://example.com";
 
-// Example URL
-const url = 'https://example.com';
-const getData = async() => await getMetadata(url).then(metadata => {
-console.log(metadata);
-});
-getData()
+const getData = async () => {
+  const response = await getMetadata(url);
+  console.log(response);
+};
 
-//getMetadata(url: string)
-Fetches the metadata from the provided URL.
+getData();
 ```
-## Result
+
+### ✅ getMetadata(url: string)
+Fetches metadata from a given URL and returns a structured object.
+
+---
+
+## 📦 Example Response
+
 ```json
 {
-"title": "Open Graph title",
-"description": "Open Graph description",
-"image": "Open Graph image URL",
-"url": "Open Graph URL",
-"keywords": "Page keywords",
-"canonical": "Canonical URL"
+  "data": {
+    "id": "f9e65b3e-136a-41a1-b3c5-6f80dc66a48a",
+    "title": "Metadata Fetcher & Scraper Tool | Preview Open Graph & SEO Tags",
+    "description": "Fetch and visualize website metadata including Open Graph, Twitter Cards, favicons, canonical URLs, and more.",
+    "keywords": "metadata fetcher,metadata scraper,open graph viewer,twitter card preview,SEO metadata tool,website metadata,link preview generator,social media preview",
+    "author": null,
+    "favicon": "/favicon.ico",
+    "canonical": "https://metadata-fetcher.vercel.app/",
+    "themeColor": null,
+    "charset": "utf-8",
+    "url": "https://metadata-fetcher.vercel.app",
+    "image": "https://metadata-fetcher.vercel.app/api/og",
+    "facebook": {
+      "title": "Metadata Fetcher & Scraper Tool",
+      "description": "Easily extract and preview Open Graph, Twitter Card, favicon, and canonical metadata from any webpage.",
+      "image": "https://metadata-fetcher.vercel.app/api/og",
+      "url": "https://metadata-fetcher.vercel.app",
+      "type": "website",
+      "siteName": "Metadata Fetcher"
+    },
+    "twitter": {
+      "title": "Metadata Fetcher & Scraper Tool",
+      "description": "Instantly fetch and visualize Open Graph, Twitter Card, and SEO tags from any webpage.",
+      "image": "https://metadata-fetcher.vercel.app/api/og",
+      "card": "summary_large_image",
+      "site": "@Abhii5496",
+      "creator": "@Abhii5496"
+    }
+  }
 }
 ```
-## Error Object Structure
+
+---
+
+## ❌ Error Handling
+
+If something goes wrong (invalid URL, fetch failure, etc.), the function returns a structured error:
+
 ```json
 {
-"error": "Error message"
+  "error": "Invalid URL or fetch error"
 }
 ```
 
-## Error Handling
-The getMetadata function handles errors gracefully and returns an error message in the following cases:
+---
 
-If the URL is not provided.
+## ✨ Features
 
-If the URL is not valid.
+- ✅ Fetch Open Graph tags (og:title, og:image, etc.)
+- ✅ Parse Twitter Card metadata (twitter:title, twitter:image, etc.)
+- ✅ Parse Facebook Card metadata (facebook:title, facebook:image, etc.)
+- ✅ Extract favicon, canonical URL, charset, and theme color
+- ✅ SEO-friendly output for integration into UIs or dashboards
+- ✅ Fully async and promise-based
 
-If the fetch request fails.
+---
 
-If an error occurs during the extraction of metadata.
+## 🌐 Live Demo
 
-This package is made using [cheerio](https://www.npmjs.com/package/cheerio)❤️.
+Try it online at: [https://metadata-fetcher.vercel.app](https://metadata-fetcher.vercel.app)
+
+---
+
+## 📄 License
+
+MIT
+
+---
