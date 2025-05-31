@@ -1,6 +1,6 @@
 {
   "name": "metadata-fetch",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "This package is used to fetch the metadata of given url or site with help of cheerio.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
